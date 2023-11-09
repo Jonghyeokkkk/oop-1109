@@ -1,0 +1,23 @@
+class turtleking extends ggobugi{
+  String name; 
+  turtleking(float x, float y, String bodyColor, String name){
+    super(x,y,bodyColor);
+    this.name = name;
+  }
+  void drawturtleking(){
+    textSize(20);
+    fill(0);
+    textAlign(CENTER);
+    text(name, x, y + 150);
+    
+    drawFace();
+    fill(150,75,0);
+    
+    // Left ear
+
+    
+    // Right ear
+
+
+  }
+}
