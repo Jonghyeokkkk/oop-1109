@@ -1,0 +1,66 @@
+class ggobugi {
+  float x;
+  float y;
+  String bodyColor;
+
+  
+  ggobugi(float x, float y, String bodyColor) {
+    this.x = x;
+    this.y = y;
+    this.bodyColor = bodyColor;
+  }
+  
+  void drawFace() {
+    fill(220);
+    strokeWeight(5);
+    
+    // ggobugi body
+    if (bodyColor == "skyblue" ) {
+      fill(20, 180, 255);
+    }
+    if (bodyColor == "deepblue"){
+      fill(10,100,230);
+    }
+    if (bodyColor == "deepskyblue"){
+      fill(10,50,230);
+    }
+    ellipse(x, y, 200, 200);
+    
+    // ggobugi eyes
+    fill(0); 
+    circle(x - 30, y - 20, 30);
+    circle(x + 30, y - 20, 30); 
+    
+    // ggobugi pupils
+    fill(255); 
+    circle(x - 25, y - 25, 13); 
+    circle(x + 25, y - 25, 13); 
+    
+    // ggobugi nose
+    fill(0);
+    ellipse(x, y, 10, 5); 
+    
+    // ggobugi mouth
+    noFill();
+    stroke(0); 
+    arc(x - 10, y + 10, 30, 20, radians(30), radians(140));
+    arc(x + 10, y + 10, 30, 20, radians(30), radians(140)); 
+  }
+}
+unibugi[] a;
+turtleking[] b;
+void setup() {
+  size(1200, 1200);
+  a = new unibugi[2];
+  a[0] = new unibugi(600, 300, "deepblue" , "unibugi");
+  a[1] = new unibugi(600, 600, "deepblue" , "unibugi");
+  for(int i = 0; i < 2; i++){a[i].drawUnibugi();}
+
+  b = new turtleking[2];
+  b[0] = new turtleking(900, 300, "deepskyblue" , "turtleking");
+  b[1] = new turtleking(900, 600, "deepskyblue" , "turtleking");
+  for(int i = 0; i < 2; i++){b[i].drawturtleking();}
+  
+  ggobugi c = new ggobugi( 300,300,"skyblue");
+  c.drawFace();
+}
