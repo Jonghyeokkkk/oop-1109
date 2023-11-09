@@ -1,0 +1,24 @@
+class unibugi extends ggobugi {
+  String name; 
+  
+  unibugi(float x, float y, String bodyColor, String name){
+    super(x, y, bodyColor);
+    this.name = name;
+  }
+  
+  void drawUnibugi(){
+    
+    drawFace();
+    
+    // Display name
+    textSize(20);
+    fill(0);
+    textAlign(CENTER);
+    text(name, x, y + 160);
+    
+    // unibugi tail
+    fill(255, 255, 255); // 꼬리의 색상을 선택해보자!
+    // 둥근 대각선 꼬리를 그리는 arc 함수 호출
+    arc(x+10, y + 100, 50, 80, radians(60), radians(190), PIE);
+  }
+}
